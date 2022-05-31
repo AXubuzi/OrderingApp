@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="OrderingApp.MainPage">
+
+
+    <StackLayout Margin="20" VerticalOptions="StartAndExpand">
+
+        <Frame BackgroundColor="Green" CornerRadius="0">
+            <Label Text="Ordering App" HorizontalTextAlignment="Start" TextColor="White" FontSize="Title" FontAttributes="Bold"/>
+        </Frame>
+        <Label Text="Name" />
+            <Entry Text="{Binding Name}" />
+            <Label Text="Gender" />
+            <Entry Text="{Binding Gender}"/>
+            <Label Text="T Shirt Size (S,M,L,XL)"/>
+            <Entry Text="{Binding Size}"/>
+            <Label Text="Date Of Order"/>
+            <Entry Text="{Binding Date}"/>
+            <Label Text="T-Shirt Color"/>
+            <Entry Text="{Binding Color}"/>
+            <Label Text="Shipping Address"/>
+        <Entry Text="{Binding Address}"/>
+        
+        <Button Text="Save"
+                Clicked="OnSaveClicked" />
+            <Button Text="Delete"
+                Clicked="OnDeleteClicked" />
+            <Button Text="Cancel"
+                Clicked="OnCancelClicked" />
+            
+    </StackLayout>
+
+</ContentPage>
