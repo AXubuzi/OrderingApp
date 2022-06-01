@@ -15,25 +15,31 @@ namespace OrderingApp
         public MainPage()
         {
             InitializeComponent();
+            var swagitem = new SwagItems();
+            BindingContext = swagitem;
         }
 
-        private void Button_Clicked(object sender, EventArgs e)
+
+        async void OnSaveClicked(object sender, EventArgs e)
         {
+            var swagitem = (SwagItems)BindingContext;
+            ordersDatabase database = await ordersDatabase.Instance;
+            await database.SaveItemAsync(swagitem);
+            await Navigation.PushAsync(new SwagList());
+        }
+
+        async void OnDeleteClicked(object sender, EventArgs e)
+        {
+            var swagitem = (SwagItems)BindingContext;
+            ordersDatabase database = await ordersDatabase.Instance;
+            await database.DeleteItemAsync(swagitem);
+            await Navigation.PushAsync(new SwagList());
 
         }
 
-        private void OnSaveClicked(object sender, EventArgs e)
+        async void OnCancelClicked(object sender, EventArgs e)
         {
-
-        }
-
-        private void OnDeleteClicked(object sender, EventArgs e)
-        {
-
-        }
-
-        private void OnCancelClicked(object sender, EventArgs e)
-        {
+            await Navigation.PushAsync(new SwagList());
 
         }
     }

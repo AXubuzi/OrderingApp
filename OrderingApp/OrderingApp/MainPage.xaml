@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="OrderingApp.MainPage">
+             x:Class="OrderingApp.MainPage" NavigationPage.HasNavigationBar="False">
 
 
     <StackLayout Margin="20" VerticalOptions="StartAndExpand">
 
-        <Frame BackgroundColor="Green" CornerRadius="0">
-            <Label Text="Ordering App" HorizontalTextAlignment="Start" TextColor="White" FontSize="Title" FontAttributes="Bold"/>
+        <Frame BackgroundColor="Green">
+            <Label Text="Ordering App" HorizontalTextAlignment="Start" TextColor="White" FontSize="36" FontAttributes="Bold"/>
         </Frame>
         <Label Text="Name" />
             <Entry Text="{Binding Name}" />
